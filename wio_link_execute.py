@@ -27,11 +27,11 @@ def post_url(url):
 def main(argv):
     status = argv
     if status == "success":
-        urls =[led_reset_api, green_led_on_api]
+        urls =[green_led_on_api]
     elif status == "failure":
-        urls =[led_reset_api, red_led_on_api]
+        urls =[red_led_on_api]
     elif status == "building":
-        urls =[led_reset_api, blue_led_on_api]
+        urls =[blue_led_on_api]
 
     for url in urls:
         threading.Thread(target=post_url, args=(url,)).start()
